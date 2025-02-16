@@ -1,0 +1,23 @@
+<mat-card class="mb-4 courseCard mat-elevation-z7" appearance="outlined">
+    <mat-card-header>
+        <mat-card-title>
+            {{courseObj.description}}
+        </mat-card-title>
+    </mat-card-header>
+    <img
+    mat-card-image
+    [src]="courseObj.iconUrl"
+    [title]="courseObj.description"
+    [alt]="courseObj.description">
+    <mat-card-content>
+        {{courseObj.longDescription}}
+    </mat-card-content>
+    <mat-card-actions>
+       <button mat-raised-button 
+       [routerLink]="['courses', courseObj.id]"
+       color="primary">View Course</button>
+       <button
+       (click)="onEdit()"
+       mat-raised-button color="accent">Edit Course</button>
+    </mat-card-actions>
+</mat-card>

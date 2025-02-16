@@ -1,0 +1,4 @@
+{
+    "extensions.closeExtensionDetailsOnViewChange": true,
+    "C_Cpp.errorSquiggles": "enabled"
+}

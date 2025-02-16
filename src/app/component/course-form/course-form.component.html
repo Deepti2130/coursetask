@@ -1,0 +1,52 @@
+
+<h2>
+    {{courseData.description}}
+</h2>
+
+<form [formGroup]="courseForm">
+    <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>
+            Description
+        </mat-label>
+        <input matInput placeholder="Description" formControlName="description">
+
+        <mat-error >
+            Description is required feild.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>Category</mat-label>
+       <mat-select formControlName="category">
+            <mat-option value ="BEGINNER"> BEGINNER</mat-option>
+            <mat-option value ="ADVANCED"> ADVANCED</mat-option>
+       </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>
+            Release At
+        </mat-label>
+        <input matInput [matDatepicker]="datepicker" formControlName="releasedAt">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancel</button>
+            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+        </mat-datepicker>
+     </mat-form-field>
+    <mat-form-field appearance="legacy" class="w-100">
+        <mat-label>
+           Long Description
+        </mat-label>
+        <textarea matInput formControlName="longDescription" placeholder="Long Description..."></textarea>
+        <mat-error >
+           Long Description is required feild.
+        </mat-error>
+    </mat-form-field>
+    <mat-card-actions>
+        <button mat-raised-button type="button" color="warn">Close</button>
+        <button mat-raised-button type="button" color="primary">Save</button>
+        
+    </mat-card-actions>
+</form>
